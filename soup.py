@@ -11,6 +11,6 @@ mytable = soup.find('table', {'class': 'wikitable'})
 
 print(mytable.prettify())
 
- for row in mytable.find_all('tr'):
-     for cell in row.find_all('td'):
-         print(cell.text)
+for row in mytable.find_all('tr'):
+    for cell in row.find_all('td'):
+        print(cell.text)
