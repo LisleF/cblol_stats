@@ -1,7 +1,7 @@
 from mwrogue.esports_client import EsportsClient
 site = EsportsClient("lol")
 
-date = "'2023-01-01 00:00:00'"
+date = "'2023-01-01 00:00:00 AM'"
 player = "Disamis"
 
 
@@ -18,7 +18,7 @@ response = site.cargo_client.query(
     tables="MatchScheduleGame=MSG, MatchSchedule=MS",
     join_on="MSG.MatchId=MS.MatchId",
     fields="MS.DateTime_UTC, MSG.Team1, MSG.Team2, MSG.Winner, MSG.Patch, MSG.Team1Score, MSG.Team2Score",
-    where="MS.CastersPBP=Schaeppi"
+    where="MSG.DateTime_UTC >= '%s'" % (date)
 )
 
 print(response)
