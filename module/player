@@ -1,0 +1,9 @@
+
+
+class Player():
+    def __init__(self, df):
+        self.name = df['Player']
+        self.position = df['POS']
+        self.team = df['Team']
+        pass
+    pass
